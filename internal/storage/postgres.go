@@ -11,7 +11,7 @@ type PostgreSQL struct {
 }
 
 func NewPostgreSQL(connString string) (*PostgreSQL, error) {
-	db, err := sql.Open("postgres", "host=localhost user=postgres port=5432 password=local sslmode=disable")
+	db, err := sql.Open("postgres", connString)
 	if err != nil {
 		return nil, err
 	}
